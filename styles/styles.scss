@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 *,
 *::before,
 *::after {
@@ -6,25 +8,137 @@
 }
 
 body {
+  font-family: Roboto, sans-serif;
   height: 100vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(214.29, 31.82%, 91.37%);
+  user-select: none;
+}
+
+.hd-txt {
+  font-size: 2.8em;
+  font-weight: bold;
+  margin: 1em;
+  margin-top: 0.5em;
+}
+
+.playerNames {
+  margin: auto;
+  position: static;
+  top: -5em;
+  height: 60vh;
+  width: 30vw;
+  border-radius: 25px;
+}
+
+form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2em;
+  p {
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    border-radius: 15px;
+    border: 2px solid black;
+    padding: 0.5em 2em;
+    font-size: 15px;
+  }
+  label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.start {
+  padding: 1em 2em;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .board {
   display: grid;
-  grid-template-rows: repeat(3, 150px);
-  grid-template-columns: repeat(3, 150px);
-  border: 2px solid black;
+  grid-template-rows: repeat(3, 135px);
+  grid-template-columns: repeat(3, 135px);
+  gap: 0.8em;
 }
 
 .cell {
-  border: 2px solid black;
+  border: 3px solid black;
+  border-radius: 19px;
   cursor: pointer;
   font-size: 30px;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:hover {
+    background-color: hsl(221, 21%, 83%);
+  }
+  &:active {
+    background-color: hsl(214.29, 31.82%, 91.37%);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.gameMessageDialog {
+  margin: auto;
+  height: 15em;
+  width: 24em;
+  padding: 2em;
+  position: static;
+  top: -8em;
+  border-radius: 20px;
+
+  &::backdrop {
+    opacity: 0;
+  }
+}
+
+.gameMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message {
+  font-size: 20px;
+}
+
+.playAgain {
+  margin-top: auto;
+  padding: 0.5em 1em;
+  border-radius: 15px;
+  border: 2px solid black;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.currentPlayer {
+  font-size: 21px;
+  font-weight: bold;
+  margin-bottom: 2em;
+}
+
+.highlightWinner {
+  background-color: lightskyblue;
+}
+
+.reset,
+.changeName {
+  font-size: 17px;
+  font-weight: bold;
+  padding: 0.4em 0.9em;
+  margin-top: 2em;
 }
