@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Permanent+Marker&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 *,
 *::before,
 *::after {
@@ -19,13 +19,15 @@ body {
 }
 
 .hd-txt {
-  font-size: 2.8em;
+  font-family: "Permanent Marker";
+  font-size: 4.2em;
   font-weight: bold;
-  margin: 1em;
-  margin-top: 0.5em;
+  margin: 0.3em;
+  margin-top: 0.14em;
 }
 
 .playerNames {
+  font-family: "Outfit", Roboto, sans-serif;
   margin: auto;
   position: static;
   top: -5em;
@@ -75,8 +77,9 @@ form label {
   border: 3px solid black;
   border-radius: 19px;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 47px;
   font-weight: bold;
+  font-family: "Permanent Marker", Roboto, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,9 +128,12 @@ form label {
 }
 
 .currentPlayer {
-  font-size: 21px;
+  font-family: "Outfit", Roboto, sans-serif;
+  font-style: normal;
+  font-size: 1.6em;
   font-weight: bold;
-  margin-bottom: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .highlightWinner {
@@ -136,8 +142,10 @@ form label {
 
 .reset,
 .changeName {
+  font-family: "Outfit", Roboto, sans-serif;
   font-size: 17px;
   font-weight: bold;
   padding: 0.4em 0.9em;
   margin-top: 2em;
+  cursor: pointer;
 }
