@@ -127,7 +127,6 @@ const DisplayController = (function () {
   );
 
   const startGame = () => {
-    document.querySelector(".board").classList.remove("hidden");
     GameBoard.resetBoard();
     renderBoard();
 
@@ -159,14 +158,14 @@ const DisplayController = (function () {
 
   window.onload = () => dialogBox.showModal();
 
-  // window.addEventListener("beforeunload", (event) => {
-  //   event.preventDefault();
-  //   const confirmed = confirm("Are you sure you want to reload?");
-  //   if (!confirmed) {
-  //     return;
-  //   }
-  //   window.location.reload();
-  // });
+  window.addEventListener("beforeunload", (event) => {
+    event.preventDefault();
+    const confirmed = confirm("Are you sure you want to reload?");
+    if (!confirmed) {
+      return;
+    }
+    window.location.reload();
+  });
 
   return { renderBoard, displayMessage, currentPlayerIndicator, highlightWinner };
 })();

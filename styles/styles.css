@@ -12,28 +12,42 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: hsl(214.29, 31.82%, 91.37%);
+  background-color: hsl(0, 0%, 6%);
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
 }
 
 .hd-txt {
-  font-family: "Permanent Marker";
-  font-size: 4.2em;
+  color: hsl(267, 96%, 67%);
+  font-family: "Permanent Marker", Roboto, sans-serif;
+  font-size: 4.4em;
   font-weight: bold;
+  font-style: normal;
   margin: 0.3em;
   margin-top: 0.14em;
+  text-shadow: 2px 4px 8px rgba(152, 92, 255, 0.6);
 }
 
 .playerNames {
   font-family: "Outfit", Roboto, sans-serif;
+  color: hsl(262, 100%, 68%);
   margin: auto;
   position: static;
-  top: -5em;
-  height: 60vh;
-  width: 30vw;
-  border-radius: 25px;
+  top: -3em;
+  height: 50.5vh;
+  width: 27vw;
+  border-radius: 27px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  backdrop-filter: blur(4px) saturate(175%);
+  -webkit-backdrop-filter: blur(4px) saturate(175%);
+  background-color: hsla(0, 0%, 10%, 0.71);
+  border: 2px solid hsl(262, 100%, 68%);
+}
+.playerNames::backdrop {
+  opacity: 1;
 }
 
 form {
@@ -51,33 +65,59 @@ form p {
 }
 form input {
   border-radius: 15px;
-  border: 2px solid black;
+  border: 2px solid hsl(262, 100%, 68%);
   padding: 0.5em 2em;
   font-size: 15px;
+  background-color: hsla(0, 0%, 10%, 0.71);
+  outline: none;
+  color: hsl(262, 100%, 68%);
+}
+form input:focus {
+  border: 2px solid hsl(262, 100%, 59%);
 }
 form label {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
 }
 
 .start {
   padding: 1em 2em;
   border-radius: 20px;
+  color: hsl(262, 100%, 68%);
+  margin-top: 2em;
+  font-weight: bold;
+  background-color: hsla(0, 0%, 10%, 0.71);
+  outline: none;
+  border: 2px solid hsl(262, 100%, 68%);
+  font-size: 15px;
   cursor: pointer;
+}
+.start:hover {
+  box-shadow: 0px 0px 15px 1px rgba(152, 92, 255, 0.79);
+  background-color: hsl(262, 100%, 68%);
+  color: #121212;
+  transform: scale(1.08);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.1s ease-in;
+}
+.start:active {
+  transform: scale(0.9);
+  transition: transform 0.1s ease-in;
+  background-color: hsl(262, 100%, 73%);
 }
 
 .board {
+  background-color: #1f1f1f;
   display: grid;
   grid-template-rows: repeat(3, 135px);
   grid-template-columns: repeat(3, 135px);
-  gap: 0.8em;
+  border-radius: 15px;
+  box-shadow: 0px 0px 33px 2px rgba(152, 92, 255, 0.79);
 }
 
 .cell {
-  border: 3px solid black;
-  border-radius: 19px;
+  color: hsl(262, 100%, 68%);
   cursor: pointer;
-  font-size: 47px;
+  font-size: 49px;
   font-weight: bold;
   font-family: "Permanent Marker", Roboto, sans-serif;
   display: flex;
@@ -85,27 +125,44 @@ form label {
   align-items: center;
 }
 .cell:hover {
-  background-color: hsl(221, 21%, 83%);
+  background-color: hsl(0, 0%, 19%);
 }
 .cell:active {
-  background-color: hsl(214.29, 31.82%, 91.37%);
+  background-color: hsl(0, 0%, 10%);
 }
-
-.hidden {
-  display: none;
+.cell:nth-of-type(1) {
+  border-top-left-radius: 15px;
+}
+.cell:nth-of-type(3) {
+  border-top-right-radius: 15px;
+}
+.cell:nth-of-type(7) {
+  border-bottom-left-radius: 15px;
+}
+.cell:nth-of-type(9) {
+  border-bottom-right-radius: 15px;
 }
 
 .gameMessageDialog {
+  font-family: "Outfit", Roboto, sans-serif;
   margin: auto;
   height: 15em;
   width: 24em;
   padding: 2em;
   position: static;
   top: -8em;
-  border-radius: 20px;
+  border-radius: 27px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  backdrop-filter: blur(4px) saturate(175%);
+  -webkit-backdrop-filter: blur(4px) saturate(175%);
+  background-color: hsla(0, 0%, 10%, 0.71);
+  border: 2px solid hsl(262, 100%, 68%);
+  color: hsl(262, 100%, 68%);
 }
 .gameMessageDialog::backdrop {
-  opacity: 0;
+  opacity: 1;
 }
 
 .gameMessage {
@@ -115,19 +172,35 @@ form label {
 }
 
 .message {
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .playAgain {
-  margin-top: auto;
+  margin-top: 2em;
   padding: 0.5em 1em;
-  border-radius: 15px;
-  border: 2px solid black;
-  font-size: 17px;
+  border-radius: 20px;
+  font-size: 18px;
   cursor: pointer;
+  font-weight: bold;
+  color: hsl(262, 100%, 68%);
+  background-color: hsla(0, 0%, 10%, 0.71);
+  border: 2px solid hsl(262, 100%, 68%);
+}
+.playAgain:focus {
+  outline: none;
+}
+.playAgain:hover {
+  box-shadow: 0px 0px 33px 2px rgba(152, 92, 255, 0.79);
+}
+.playAgain:active {
+  transform: scale(0.9);
+  transition: transform 0.1s ease-in;
+  background-color: hsl(262, 100%, 73%);
 }
 
 .currentPlayer {
+  color: hsl(266.95, 95.16%, 68.69%);
   font-family: "Outfit", Roboto, sans-serif;
   font-style: normal;
   font-size: 1.6em;
@@ -137,15 +210,55 @@ form label {
 }
 
 .highlightWinner {
-  background-color: lightskyblue;
+  color: lightskyblue;
+}
+
+.btm-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.8em;
 }
 
 .reset,
 .changeName {
   font-family: "Outfit", Roboto, sans-serif;
-  font-size: 17px;
+  font-size: 17.7px;
   font-weight: bold;
+  color: hsl(262, 100%, 68%);
   padding: 0.4em 0.9em;
-  margin-top: 2em;
+  margin-top: 2.2em;
+  background-color: #121212;
+  border: 2px solid hsl(262, 100%, 68%);
+  border-radius: 20px;
   cursor: pointer;
+}
+.reset:focus,
+.changeName:focus {
+  outline: none;
+}
+.reset:hover,
+.changeName:hover {
+  transform: scale(1.1);
+  background-color: hsl(262, 100%, 68%);
+  color: #121212;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.1s ease-in;
+}
+.reset:active,
+.changeName:active {
+  transform: scale(0.9);
+  transition: transform 0.1s ease-in;
+  background-color: hsl(262, 100%, 73%);
+}
+
+.btm-right {
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+}
+
+.btm {
+  border-bottom: 3px solid black;
+}
+
+.right {
+  border-right: 3px solid black;
 }
