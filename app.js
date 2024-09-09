@@ -55,7 +55,6 @@ const GameController = (function () {
   let gameActive = true;
 
   const startGame = (playerOne, playerTwo) => {
-    GameBoard.resetBoard();
     players = [Player(playerOne, "X"), Player(playerTwo, "O")];
     gameActive = true;
     currentPlayerIndex = 0;
@@ -84,7 +83,6 @@ const GameController = (function () {
 })();
 
 const DisplayController = (function () {
-  const board = document.querySelector(".board");
   const cells = document.querySelectorAll(".cell");
   const startBtn = document.querySelector(".start");
   const dialogBox = document.querySelector(".playerNames");
@@ -138,7 +136,9 @@ const DisplayController = (function () {
 
   startBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    startGame();
+    let player1 = document.querySelector("#player1").value || "Player1";
+    let player2 = document.querySelector("#player2").value || "Player2";
+    GameController.startGame(player1, player2);
     dialogBox.close();
   });
 
@@ -153,17 +153,15 @@ const DisplayController = (function () {
 
   changeName.addEventListener("click", () => {
     dialogBox.showModal();
-    startGame();
+    let player1 = document.querySelector("#player1").value || "Player1";
+    let player2 = document.querySelector("#player2").value || "Player2";
+    GameController.startGame(player1, player2);
   });
 
   window.onload = () => dialogBox.showModal();
 
   window.addEventListener("beforeunload", (event) => {
     event.preventDefault();
-    const confirmed = confirm("Are you sure you want to reload?");
-    if (!confirmed) {
-      return;
-    }
     window.location.reload();
   });
 
